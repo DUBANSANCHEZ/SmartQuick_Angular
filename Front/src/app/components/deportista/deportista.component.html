@@ -1,1 +1,32 @@
-<p>deportista works!</p>
+<ng-container>
+    <table>
+        <thead>
+            <tr>
+                <th>athlete</th>
+                <th>age</th>
+                <th>country</th> 
+                <th>year</th> 
+                <th>date</th>
+                <th>sport</th>
+                <th>gold</th>
+                <th>silver</th>
+                <th>bronze</th>
+                <th>total</th>                              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let deportista of AdministradorService.deportista">
+                <td>{{ deportista.athlete }}</td>
+                <td>{{ deportista.age }}</td>
+                <td>{{ deportista.country }}</td>
+                <td>{{ deportista.year }}</td>
+                <td>{{ deportista.date }}</td>
+                <td>{{ deportista.sport }}</td>
+                <td>{{ deportista.gold }}</td>
+                <td>{{ deportista.silver }}</td>
+                <td>{{ deportista.bronze }}</td>
+                <td>{{ deportista.total }}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
