@@ -1,9 +1,7 @@
 import { RouterModule } from "@angular/router";
-import { AppComponent } from "./app.component";
-import { LoginComponent} from './components/login/login.component';
+import { AppComponent } from "./app.component"
 
 const appRoutes = [
   { path: "", component: AppComponent, pathMatch: "full" },
-  { path: "login", component: LoginComponent, pathMatch: "full" },
 ];
 export const routing = RouterModule.forRoot(appRoutes);

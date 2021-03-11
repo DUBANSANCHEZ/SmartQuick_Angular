@@ -9,12 +9,24 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { CoordinadorComponent } from './components/coordinador/coordinador.component';
+import { DeportistaComponent } from './components/deportista/deportista.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { MedallasComponent } from './components/medallas/medallas.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    AdminComponent,
+    CoordinadorComponent,
+    DeportistaComponent,
+    FooterComponent,
+    LoginComponent,
+    MedallasComponent,
+    NavBarComponent,
   ],
   imports: [
     HttpClientModule,
