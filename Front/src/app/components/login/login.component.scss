@@ -1,0 +1,60 @@
+body {
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: calc(1em + 1vw);
+    width:70%;
+    margin: 0 auto;
+    min-width:400px;
+    max-width:2000px;
+  }  
+.texto{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+.card{
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);    
+    max-width:500px;
+}
+  
+.card-title{
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2vw;
+    margin: 0%;
+}
+  
+.card-body{
+    padding: 2rem;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: #b0c2bc;
+    font-size: 1vw;
+  }
+  
+#btnLogin{
+    background-color: #07b0e4;
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+#btnlogin:hover{
+    color: white;
+    border-radius: 10rem;
+  }
+  
+.form-label-group {   
+    margin-left: 40%;
+    margin-right: 40%;
+  }
+  
+.separador{
+    padding-top: 114px;
+    padding-bottom: 114px;
+  }
+.form-group{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+.nav-brand{
+    width: 250px;
+    margin-left: 45%;
+  }

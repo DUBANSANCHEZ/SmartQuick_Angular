@@ -1,1 +1,44 @@
-<p>login works!</p>
+<body>
+    <div class="container separador">
+        <div class="row justify-content-center">
+            <div class="card" style="width: 500px;">
+                <div class="card-body">
+                    <img src="../../../assets/Logo-SmartQuick.png" alt="TechNews Logo" class="nav-brand">
+                    <h5 class="card-title">Ingreso</h5>  
+                    <p class="texto">Bienvenido, porfavor ingresa tu cuenta</p>
+                    <form [formGroup]="loginForm" novalidate>
+                        <div class="form-group">
+                            <input type="text" class= "form-control" name="Nombre" placeholder="Nombre" formControlName="Nombre" autofocus>
+                            <div *ngIf="loginForm.get('Nombre').errors" class="alert alert-danger">
+                                <div *ngIf="loginForm.get('Nombre').errors['required']">
+                                Nombre requerido
+                                </div>
+                                <div *ngIf="loginForm.get('Nombre').errors['pattern']">
+                                Nombre requerido
+                                </div>
+                            </div>  
+                        </div> 
+                        <div class="form-group">
+                            <input type="Password" class= "form-control" name="Password" placeholder="Contraseña" (keyup.enter)="login(loginForm)" formControlName= "Password">
+                            <div *ngIf="loginForm.get('Password').errors" class="alert alert-danger">
+                                <div *ngIf="loginForm.get('Password').errors['required']">
+                                Contraseña requerido
+                                </div>
+                                <div *ngIf="loginForm.get('Password').errors['minlength']">
+                                Contraseña incorrecta
+                                </div>
+                            </div>  
+                        </div>  
+                        <div class="form-label-group">
+    
+                            <button [disabled]="!loginForm.valid" class="btn btn-block" id="btnLogin" (click)="login(loginForm)"
+                            type="button">Login</button>
+                        </div>        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+  
+  
