@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Router } from '@angular/router'
 import { usersService } from '../../services/Users.service';
 
@@ -9,15 +9,18 @@ import { usersService } from '../../services/Users.service';
 })
 export class NavBarComponent implements OnInit {
 
-  Value_Nombre : any;
-  Value_Rol : any;
-  constructor(private UsersService:usersService, private router:Router) { }
+  @Output() scrollEvent: EventEmitter<any> = new EventEmitter();
+
+  valueName: any;
+  valueRole: any;
+
+  constructor(private UsersService: usersService, private router: Router) { }
 
   ngOnInit(): void {
-    this.Value_Nombre = this.UsersService.Value_login.Nombre;
-    this.Value_Rol = this.UsersService.Value_login.Rol;
+    this.valueName = this.UsersService.Value_login.Nombre;
+    this.valueRole = this.UsersService.Value_login.Rol;
   }
-  logout(){        
+  logout(): void{
     this.router.navigate(['login']);
   }
 

@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<div *ngIf="!isLogin">
+  <app-nav-bar></app-nav-bar>
+  <div class="body">
+    <div *ngIf="!isCoordinador" class="style-admin">
+      <app-admin></app-admin>
+    </div>
+    <div class="style-router">
+      <div *ngIf="isMedallas">
+        <app-medallas></app-medallas>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
+<div *ngIf="isLogin">
+  <router-outlet></router-outlet>
+</div>
+
+

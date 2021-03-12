@@ -14,25 +14,24 @@ declare var M: any;
 export class LoginComponent implements OnInit {
 
   Value: any;
-  nombre_Persona: any;
 
   loginForm: FormGroup;
   constructor(private UsersService:usersService, private fb: FormBuilder, private router: Router, private toastr: ToastrService) {
     this.buildForm();
   }
-  
+
   buildForm() {
     this.loginForm = this.fb.group({
       Nombre: ['', Validators.compose([Validators.required, Validators.pattern(/^[A-z]/)])],
       Password: ['', Validators.compose([Validators.required, Validators.minLength(3)])]
     });
   }
-  
+
   ngOnInit(): void {
   }
-  login(form){
+  login(form): void{
     this.Value = this.UsersService.authentication(form.value);
-     if (this.Value == undefined)  {
+     if (this.Value === undefined)  {
       M.toast({
         html: `<div class="alert alert-danger" style="position: fixed; top: 100px; right: 50px; z-index: 7000;" role="alert">
              <h4 class="alert-heading">FALLO AUTENTICACIÓN</h4>
@@ -40,11 +39,12 @@ export class LoginComponent implements OnInit {
              <hr>
          </div>`});
     }  else {
-        if (this.Value.Rol == 'Administrador') {
-            this.router.navigate(['admin']);
-        } else if (this.Value.Rol == "Coordinador") {
+        if (this.Value.Rol === 'Administrador') {
+            this.router.navigate(['deportista']);
+          // tslint:disable-next-line:triple-equals
+        } else if (this.Value.Rol === 'Coordinador') {
             this.router.navigate(['coordinador']);
         }
-    }  
+    }
   }
 }

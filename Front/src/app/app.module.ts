@@ -6,6 +6,7 @@ import { FormsModule} from '@angular/forms'
 import { ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     BrowserModule,
     RouterModule,
     AppRoutingModule,
+    Ng2SmartTableModule,
     ToastrModule.forRoot(),
     FormsModule,
     BrowserAnimationsModule,

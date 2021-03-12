@@ -1,32 +1,14 @@
 <ng-container>
-    <table>
+  <div class="table-responsive">
+    <table class="table">
         <thead>
-            <tr>
-                <th><img src="../../../assets/Medalla_oro.png"></th>
-                <th><img src="../../../assets/Medalla_plata.png"></th>
-                <th><img src="../../../assets/Medalla_bronce.png"></th>
-            </tr>
+          <tr *ngFor=" let medal of medals, let i = index">
+            <th (click)="clickMedal(i)"><img class="table-image" [src]= "medal.imagen"></th>
+            <th> {{medal.medalla}}</th>
+            <th>{{ medal.numeroMedallas }}</th>
+            <th *ngIf="medal.activo " class="medal-decription">{{medal.descripcion}}</th>
+          </tr>
         </thead>
-        <thead>
-            <tr>               
-                <th>gold</th>
-                <th>silver</th>
-                <th>bronze</th>                                     
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ this.Medalla_Gold }}</td>
-                <td>{{ this.Medalla_Silver }}</td>
-                <td>{{ this.Medalla_Bronze }}</td>
-            </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <p>Una medalla de oro es una medalla que se otorga al ganador por una institución de competiciones como los Juegos Olímpicos</p>
-                <p>Una medalla de plata es una medalla que se otorga al competidor o competidora que queda en segunda posición de una competición.</p>
-                <p>Una medalla de bronce es una medalla que se otorga al tercer clasificado de diversas competiciones como los Juegos Olímpicos.</p>
-            </tr>
-        </tbody>
     </table>
+  </div>
 </ng-container>
